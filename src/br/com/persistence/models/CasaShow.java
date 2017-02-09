@@ -158,6 +158,24 @@ public class CasaShow {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "CasaShow{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", horaInicio=" + horaInicio +
+                ", diaFecha='" + diaFecha + '\'' +
+                ", codigoCidade=" + codigoCidade +
+                ", codigoRestaurante=" + codigoRestaurante +
+                ", cidadeByCodigoCidade=" + cidadeByCodigoCidade +
+                ", restauranteByCodigoRestaurante=" + restauranteByCodigoRestaurante +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "CODIGO_CIDADE", referencedColumnName = "CODIGO", nullable = false)
     public Cidade getCidadeByCodigoCidade() {

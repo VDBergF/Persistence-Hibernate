@@ -131,6 +131,22 @@ public class Museu {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Museu{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", numeroSalas=" + numeroSalas +
+                ", codigoCidade=" + codigoCidade +
+                ", fundasByCodigo=" + fundasByCodigo +
+                ", cidadeByCodigoCidade=" + cidadeByCodigoCidade +
+                '}';
+    }
+
     @OneToMany(mappedBy = "museuByCodigoMuseu")
     public Collection<Funda> getFundasByCodigo() {
         return fundasByCodigo;

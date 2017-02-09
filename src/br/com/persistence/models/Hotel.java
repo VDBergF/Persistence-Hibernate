@@ -132,6 +132,22 @@ public class Hotel {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", codigoCidade=" + codigoCidade +
+                ", tipo=" + tipo +
+                ", codigoRestaurante=" + codigoRestaurante +
+                ", restauranteByCodigoRestaurante=" + restauranteByCodigoRestaurante +
+                ", quartosByCodigo=" + quartosByCodigo +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "CODIGO_RESTAURANTE", referencedColumnName = "CODIGO")
     public Restaurante getRestauranteByCodigoRestaurante() {

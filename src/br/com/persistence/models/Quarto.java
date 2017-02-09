@@ -77,6 +77,17 @@ public class Quarto {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Quarto{" +
+                "preco=" + preco +
+                ", tipo='" + tipo + '\'' +
+                ", codigoHotel=" + codigoHotel +
+                ", numero=" + numero +
+                ", hotelByCodigoHotel=" + hotelByCodigoHotel +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "CODIGO_HOTEL", referencedColumnName = "CODIGO", nullable = false)
     public Hotel getHotelByCodigoHotel() {

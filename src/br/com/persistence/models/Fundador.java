@@ -107,6 +107,19 @@ public class Fundador {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Fundador{" +
+                "codigo=" + codigo +
+                ", dataNascimento=" + dataNascimento +
+                ", dataMorte=" + dataMorte +
+                ", nacionalidade='" + nacionalidade + '\'' +
+                ", profissao='" + profissao + '\'' +
+                ", nome='" + nome + '\'' +
+                ", fundasByCodigo=" + fundasByCodigo +
+                '}';
+    }
+
     @OneToMany(mappedBy = "fundadorByCodigoFundador")
     public Collection<Funda> getFundasByCodigo() {
         return fundasByCodigo;

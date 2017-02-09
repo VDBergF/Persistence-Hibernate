@@ -144,6 +144,22 @@ public class Igreja {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Igreja{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", estilo='" + estilo + '\'' +
+                ", dataConstrucao=" + dataConstrucao +
+                ", codigoCidade=" + codigoCidade +
+                ", cidadeByCodigoCidade=" + cidadeByCodigoCidade +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "CODIGO_CIDADE", referencedColumnName = "CODIGO", nullable = false)
     public Cidade getCidadeByCodigoCidade() {

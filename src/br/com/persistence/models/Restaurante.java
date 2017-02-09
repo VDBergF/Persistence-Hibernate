@@ -146,6 +146,24 @@ public class Restaurante {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Restaurante{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", especialidade='" + especialidade + '\'' +
+                ", precoMedio=" + precoMedio +
+                ", tipo='" + tipo + '\'' +
+                ", codigoCidade=" + codigoCidade +
+                ", casaShowsByCodigo=" + casaShowsByCodigo +
+                ", hotelsByCodigo=" + hotelsByCodigo +
+                ", cidadeByCodigoCidade=" + cidadeByCodigoCidade +
+                '}';
+    }
+
     @OneToMany(mappedBy = "restauranteByCodigoRestaurante")
     public Collection<CasaShow> getCasaShowsByCodigo() {
         return casaShowsByCodigo;

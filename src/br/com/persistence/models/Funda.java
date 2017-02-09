@@ -71,6 +71,18 @@ public class Funda {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Funda{" +
+                "pk=" + pk +
+                ", codigoFundador=" + codigoFundador +
+                ", codigoMuseu=" + codigoMuseu +
+                ", data=" + data +
+                ", fundadorByCodigoFundador=" + fundadorByCodigoFundador +
+                ", museuByCodigoMuseu=" + museuByCodigoMuseu +
+                '}';
+    }
+
     @ManyToOne
     @JoinColumn(name = "CODIGO_FUNDADOR", referencedColumnName = "CODIGO", nullable = false, insertable = false, updatable = false)
     public Fundador getFundadorByCodigoFundador() {

@@ -81,6 +81,20 @@ public class Cidade {
         return result;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Cidade{" +
+//                "codigo=" + codigo +
+//                ", nome='" + nome + '\'' +
+//                ", estado='" + estado + '\'' +
+//                ", populacao=" + populacao +
+//                ", casaShowsByCodigo=" + casaShowsByCodigo +
+//                ", igrejasByCodigo=" + igrejasByCodigo +
+//                ", museusByCodigo=" + museusByCodigo +
+//                ", restaurantesByCodigo=" + restaurantesByCodigo +
+//                '}';
+//    }
+
     @OneToMany(mappedBy = "cidadeByCodigoCidade")
     public Collection<CasaShow> getCasaShowsByCodigo() {
         return casaShowsByCodigo;
