@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!--<class name="br.com.persistence.models.Funda" table="FUNDA" schema="TURISMO_DB">-->
+        <!--<composite-id mapped="true" class="br.com.persistence.models.FundaPK">-->
+            <!--<key-property name="codigoFundador">-->
+                <!--<column name="CODIGO_FUNDADOR" sql-type="number(10)" precision="10"/>-->
+            <!--</key-property>-->
+            <!--<key-property name="codigoMuseu">-->
+                <!--<column name="CODIGO_MUSEU" sql-type="number(10)" precision="10"/>-->
+            <!--</key-property>-->
+        <!--</composite-id>-->
+        <!--<property name="data">-->
+            <!--<column name="DATA" sql-type="date" not-null="true"/>-->
+        <!--</property>-->
+        <!--<many-to-one name="fundadorByCodigoFundador" class="br.com.persistence.models.Fundador" insert="false" update="false">-->
+            <!--<column name="CODIGO_FUNDADOR"/>-->
+        <!--</many-to-one>-->
+        <!--<many-to-one name="museuByCodigoMuseu" class="br.com.persistence.models.Museu" insert="false" update="false">-->
+            <!--<column name="CODIGO_MUSEU"/>-->
+        <!--</many-to-one>-->
+    <!--</class>-->
+</hibernate-mapping>

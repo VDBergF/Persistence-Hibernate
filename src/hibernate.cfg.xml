@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="hibernate.connection.username">TURISMO_DB</property>
+        <property name="hibernate.connection.password">041097</property>
+        <property name="show_sql">true</property>
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <mapping resource="br/com/persistence/models/CasaShow.hbm.xml"/>
+        <mapping class="br.com.persistence.models.CasaShow"/>
+        <mapping resource="br/com/persistence/models/Cidade.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Cidade"/>
+        <mapping resource="br/com/persistence/models/Funda.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Funda"/>
+        <mapping resource="br/com/persistence/models/Fundador.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Fundador"/>
+        <mapping resource="br/com/persistence/models/Hotel.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Hotel"/>
+        <mapping resource="br/com/persistence/models/Igreja.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Igreja"/>
+        <mapping resource="br/com/persistence/models/Museu.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Museu"/>
+        <mapping resource="br/com/persistence/models/Quarto.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Quarto"/>
+        <mapping resource="br/com/persistence/models/Restaurante.hbm.xml"/>
+        <mapping class="br.com.persistence.models.Restaurante"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+         <!--<property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

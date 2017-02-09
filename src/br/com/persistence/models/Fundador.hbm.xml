@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="br.com.persistence.models.Fundador" table="FUNDADOR" schema="TURISMO_DB">
+        <id name="codigo">
+            <column name="CODIGO" sql-type="number(10)" precision="10"/>
+        </id>
+        <property name="dataNascimento">
+            <column name="DATA_NASCIMENTO" sql-type="date"/>
+        </property>
+        <property name="dataMorte">
+            <column name="DATA_MORTE" sql-type="date" not-null="true"/>
+        </property>
+        <property name="nacionalidade">
+            <column name="NACIONALIDADE" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="profissao">
+            <column name="PROFISSAO" sql-type="varchar2(50)" length="50" not-null="true"/>
+        </property>
+        <property name="nome">
+            <column name="NOME" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <set name="fundasByCodigo" inverse="true">
+            <key>
+                <column name="CODIGO_FUNDADOR"/>
+            </key>
+            <one-to-many not-found="ignore" class="br.com.persistence.models.Funda"/>
+        </set>
+    </class>
+</hibernate-mapping>

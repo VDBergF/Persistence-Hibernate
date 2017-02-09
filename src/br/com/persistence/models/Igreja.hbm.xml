@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="br.com.persistence.models.Igreja" table="IGREJA" schema="TURISMO_DB">
+        <id name="codigo">
+            <column name="CODIGO" sql-type="number(10)" precision="10"/>
+        </id>
+        <property name="nome">
+            <column name="NOME" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="rua">
+            <column name="RUA" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="bairro">
+            <column name="BAIRRO" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="numero">
+            <column name="NUMERO" sql-type="varchar2(12)" length="12" not-null="true"/>
+        </property>
+        <property name="descricao">
+            <column name="DESCRICAO" sql-type="varchar2(200)" length="200" not-null="true"/>
+        </property>
+        <property name="estilo">
+            <column name="ESTILO" sql-type="varchar2(50)" length="50"/>
+        </property>
+        <property name="dataConstrucao">
+            <column name="DATA_CONSTRUCAO" sql-type="date" not-null="true"/>
+        </property>
+        <property name="codigoCidade">
+            <column name="CODIGO_CIDADE" sql-type="number(10)" precision="10"/>
+        </property>
+        <many-to-one name="cidadeByCodigoCidade" class="br.com.persistence.models.Cidade" insert="false" update="false">
+            <column name="CODIGO_CIDADE"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="br.com.persistence.models.CasaShow" table="CASA_SHOW" schema="TURISMO_DB">
+        <id name="codigo">
+            <column name="CODIGO" sql-type="number(10)" precision="10"/>
+        </id>
+        <property name="nome">
+            <column name="NOME" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="rua">
+            <column name="RUA" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="bairro">
+            <column name="BAIRRO" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="numero">
+            <column name="NUMERO" sql-type="varchar2(12)" length="12" not-null="true"/>
+        </property>
+        <property name="descricao">
+            <column name="DESCRICAO" sql-type="varchar2(200)" length="200" not-null="true"/>
+        </property>
+        <property name="horaInicio">
+            <column name="HORA_INICIO" sql-type="number(2)" precision="2"/>
+        </property>
+        <property name="diaFecha">
+            <column name="DIA_FECHA" sql-type="varchar2(30)" length="30"/>
+        </property>
+        <property name="codigoCidade">
+            <column name="CODIGO_CIDADE" sql-type="number(10)" precision="10"/>
+        </property>
+        <property name="codigoRestaurante">
+            <column name="CODIGO_RESTAURANTE" sql-type="number(10)" precision="10" not-null="true"/>
+        </property>
+        <many-to-one name="cidadeByCodigoCidade" class="br.com.persistence.models.Cidade" insert="false" update="false">
+            <column name="CODIGO_CIDADE"/>
+        </many-to-one>
+        <many-to-one name="restauranteByCodigoRestaurante" class="br.com.persistence.models.Restaurante" insert="false" update="false">
+            <column name="CODIGO_RESTAURANTE" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

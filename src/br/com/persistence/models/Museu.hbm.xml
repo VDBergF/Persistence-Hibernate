@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="br.com.persistence.models.Museu" table="MUSEU" schema="TURISMO_DB">
+        <id name="codigo">
+            <column name="CODIGO" sql-type="number(10)" precision="10"/>
+        </id>
+        <property name="nome">
+            <column name="NOME" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="rua">
+            <column name="RUA" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="bairro">
+            <column name="BAIRRO" sql-type="varchar2(100)" length="100"/>
+        </property>
+        <property name="numero">
+            <column name="NUMERO" sql-type="varchar2(12)" length="12" not-null="true"/>
+        </property>
+        <property name="descricao">
+            <column name="DESCRICAO" sql-type="varchar2(200)" length="200" not-null="true"/>
+        </property>
+        <property name="numeroSalas">
+            <column name="NUMERO_SALAS" sql-type="number(3)" precision="3"/>
+        </property>
+        <property name="codigoCidade">
+            <column name="CODIGO_CIDADE" sql-type="number(10)" precision="10"/>
+        </property>
+        <many-to-one name="cidadeByCodigoCidade" class="br.com.persistence.models.Cidade" insert="false" update="false">
+            <column name="CODIGO_CIDADE"/>
+        </many-to-one>
+        <set name="fundasByCodigo" inverse="true">
+            <key>
+                <column name="CODIGO_MUSEU"/>
+            </key>
+            <one-to-many not-found="ignore" class="br.com.persistence.models.Funda"/>
+        </set>
+    </class>
+</hibernate-mapping>
